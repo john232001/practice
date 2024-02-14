@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Fontawesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-4 rounded-5 p-3">
+        <div class="container-fluid">
+          <img src="../assets/img/dar-logo.png" style="width: 50px;" alt="">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item px-2">
+                <a class="nav-link" href="#"> <i class="fa-solid fa-house"></i> Dashboard</a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link active" href="#"> <i class="fa-solid fa-envelope"></i> Land Tenure Services</a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" href="#"> <i class="fa-solid fa-users"></i> Manage Users</a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" href="#"> <i class="fa-solid fa-user-tie"></i> Officers</a>
+              </li>
+            </ul>
+            <form class="d-flex align-items-center">
+                <button class="btn btn-login" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="title-text">Basic Information</h2>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card p-5 rounded-4">
+                    <table class="table" style="width:100%">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Landholding ID :  </td>
+                                <td>Coverable Area : </td>
+                                <td>Major Crops Area : </td>
+                            </tr>
+                            <tr>
+                                <td>Landowner :</td>
+                                <td>Carpable Area : </td>
+                                <td>Year Added : </td>
+                            </tr>
+                            <tr>
+                                <td>OCT/TCT No. : </td>
+                                <td>Non-Carpable Area : </td>
+                                <td>Pipeline : </td>
+                            </tr>
+                            <tr>
+                                <td>Survey No. : </td>
+                                <td>Retained Area : </td>
+                                <td>Target Year : </td>
+                            </tr>
+                            <tr>
+                                <td>Lot No. : </td>
+                                <td>Distribute Area : </td>
+                                <td>Projected Delivery : </td>
+                            </tr>
+                            <tr>
+                                <td>Title/Survey Area : </td>
+                                <td>Land size</td>
+                                <td>Mode of Acquisition : </td>
+                            </tr>
+                            <tr>
+                                <td>Tax Declaration No. : </td>
+                                <td>Phase : </td>
+                                <td>UPALS : </td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <h2 class="title-text mt-4">ARBs</h2>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card p-5 rounded-4">
+                    <button class="btn btn-success btn-sm mb-5" style="width: 160px;" data-bs-toggle="modal" data-bs-target="#addmodalarb"><i class="fa-solid fa-add"></i> Add ARB</button>
+                    <table id="arb" class="table table-responsive table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Firstname </th>
+                                <th>Lastname</th>
+                                <th>Middle initial</th>
+                                <th>Extension</th>
+                                <th>Spouse name</th>
+                                <th>Date of Birth</th>
+                                <th>Gender</th>
+                                <th>Address</th>
+                                <th>Ownership Preference</th>
+                                <th>Date of Oathtaking</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Name">Tiger Nixon</td>
+                                <td data-label="Position">System Architect</td>
+                                <td data-label="Office">Edinburgh</td>
+                                <td data-label="Age">61</td>
+                                <td data-label="Start Date">2011-04-25</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Action">
+                                    <a href="" class="btn btn-primary btn-sm mb-1" data-bs-toggle="modal" data-bs-target="#editmodalarb"> <i class="fa-solid fa-edit"></i> Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletemodalarb"><i class="fa-solid fa-trash"></i>Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- addmodal arb -->
+                    <div class="modal fade" id="addmodalarb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add ARB</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Firstname <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="fname" placeholder="Firstname">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Middle Initial</label>
+                                        <input type="password" class="form-control" name="mname" placeholder="Middle Initial">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Lastname <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="lname" placeholder="Lastname">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Extension</label>
+                                        <input type="text" class="form-control" name="extension" placeholder="Extension">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Spouse Name</label>
+                                        <input type="text" class="form-control" name="spousename" placeholder="Spouse Name">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" name="datebirth" >
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Gender <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="gender_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Address <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="address" placeholder="Address">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Ownership Preference <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="ownership_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Date of Oathtaking <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" name="dateOfOath" placeholder="Date of Oathtaking">
+                                    </div>
+                                  </form>
+                                </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- editmodal arb -->
+                    <div class="modal fade" id="editmodalarb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add ARB</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Firstname <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="fname" placeholder="Firstname">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Middle Initial</label>
+                                        <input type="password" class="form-control" name="mname" placeholder="Middle Initial">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Lastname <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="lname" placeholder="Lastname">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Extension</label>
+                                        <input type="text" class="form-control" name="extension" placeholder="Extension">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Spouse Name</label>
+                                        <input type="text" class="form-control" name="spousename" placeholder="Spouse Name">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" name="datebirth" >
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Gender <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="gender_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Address <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="address" placeholder="Address">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Ownership Preference <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="ownership_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                        <label class="form-label">Date of Oathtaking <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" name="dateOfOath" placeholder="Date of Oathtaking">
+                                    </div>
+                                  </form>
+                                </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- delete modal arb -->
+                    <div class="modal fade" id="deletemodalarb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Delete ARB</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <label for="" class="form-label">Are you sure you want to delete? </label>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="title-text mt-4">Lots</h2>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card p-5 rounded-4">
+                    <button class="btn btn-success btn-sm mb-5" style="width: 160px;" data-bs-toggle="modal" data-bs-target="#addmodallot"><i class="fa-solid fa-add"></i> Add Lot</button>
+                    <table id="lot" class="table table-responsive table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ARB Name</th>
+                                <th>Lot No.</th>
+                                <th>Lot Type</th>
+                                <th>Lot Area</th>
+                                <th>Crop</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Name">Tiger Nixon</td>
+                                <td data-label="Position">System Architect</td>
+                                <td data-label="Office">Edinburgh</td>
+                                <td data-label="Age">61</td>
+                                <td data-label="Start Date">2011-04-25</td>
+                                <td data-label="Action">
+                                    <a href="" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editmodallot"> <i class="fa-solid fa-edit"></i> Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletemodallot"><i class="fa-solid fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- addmodal lot -->
+                    <div class="modal fade" id="addmodallot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add Lot</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">ARB Name <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="arb_name">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot No.</label>
+                                        <input type="text" class="form-control" name="lotNo" placeholder="Lot No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot Type <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="lotType_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot Area</label>
+                                        <input type="text" class="form-control" name="lotArea" placeholder="Lot Area">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Crop <span class="text-danger">(Fill the field if lot type is Carpable)</span></label>
+                                        <input type="text" class="form-control" name="lotNo" placeholder="Crop">
+                                    </div>
+                                  </form>
+                                </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- editmodal lot -->
+                    <div class="modal fade" id="editmodallot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Edit Lot</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">ARB Name <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="arb_name">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot No.</label>
+                                        <input type="text" class="form-control" name="lotNo" placeholder="Lot No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot Type <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="lotType_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot Area</label>
+                                        <input type="text" class="form-control" name="lotArea" placeholder="Lot Area">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Crop <span class="text-danger">(Fill the field if lot type is Carpable)</span></label>
+                                        <input type="text" class="form-control" name="lotNo" placeholder="Crop">
+                                    </div>
+                                  </form>
+                                </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- delete modal lot -->
+                    <div class="modal fade" id="deletemodallot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Delete Lot</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <label for="" class="form-label">Are you sure you want to delete? </label>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="title-text mt-4">Approved Survey Plan</h2>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card p-5 rounded-4">
+                    <button class="btn btn-success btn-sm mb-5" style="width: 160px;" data-bs-toggle="modal" data-bs-target="#addmodalasp"><i class="fa-solid fa-add"></i> Add Survey Plan</button>
+                    <table id="asp" class="table table-responsive table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ASP No.</th>
+                                <th>ASP Date Approved</th>
+                                <th>ASP Area</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Name">Tiger Nixon</td>
+                                <td data-label="Position">System Architect</td>
+                                <td data-label="Office">Edinburgh</td>
+                                <td data-label="Action">
+                                    <a href="" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editmodalasp"><i class="fa-solid fa-edit"></i> Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletemodalasp"><i class="fa-solid fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--Add Modal -->
+                    <div class="modal fade" id="addmodalasp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Survey Plan</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="mb-3">
+                                        <label class="form-label">ASP No. <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="aspNo" placeholder="ASP No.">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">ASP Date Approved <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" name="aspDate" placeholder="ASP Date Approved">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">ASP Area <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="aspArea" placeholder="ASP Area">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--Edit Modal -->
+                    <div class="modal fade" id="editmodalasp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Survey Plan</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="mb-3">
+                                        <label class="form-label">ASP No. <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="aspNo" placeholder="ASP No.">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">ASP Date Approved <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" name="aspDate" placeholder="ASP Date Approved">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">ASP Area <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="aspArea" placeholder="ASP Area">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- delete modal lot -->
+                    <div class="modal fade" id="deletemodalasp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Delete ASP</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <label for="" class="form-label">Are you sure you want to delete? </label>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="title-text mt-4">Valuations</h2>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card p-5 rounded-4">
+                    <button class="btn btn-success btn-sm mb-5" style="width: 160px;" data-bs-toggle="modal" data-bs-target="#addmodalvaluation"><i class="fa-solid fa-add"></i> Add Valuation</button>
+                    <table id="valuation" class="table table-responsive table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Lot No.</th>
+                                <th>AOC No.</th>
+                                <th>LBP Claim No.</th>
+                                <th>Amount</th>
+                                <th>Date Transmitted To LBP/AOC</th>
+                                <th>Date of MOV</th>
+                                <th>Date NVLA Served To LO</th>
+                                <th>Date of FI</th>
+                                <th>Date of CF Receipt</th>
+                                <th>Transmittal Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Name">Tiger Nixon</td>
+                                <td data-label="Position">System Architect</td>
+                                <td data-label="Office">Edinburgh</td>
+                                <td data-label="Age">61</td>
+                                <td data-label="Start Date">2011-04-25</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Action">
+                                    <a href="" class="btn btn-primary btn-sm mb-1" data-bs-toggle="modal" data-bs-target="#editmodalvaluation"><i class="fa-solid fa-edit"></i> Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletemodalvaluation"><i class="fa-solid fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--Add Modal -->
+                    <div class="modal fade" id="addmodalvaluation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Valuation</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot No. <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="lotNumber_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">AOC No.</label>
+                                        <input type="text" class="form-control" name="aocNo" placeholder="AOC No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">LBP Claim No.</label>
+                                        <input type="text" class="form-control" name="claimNo" placeholder="LBP Claim No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Amount</label>
+                                        <input type="text" class="form-control" name="amount" placeholder="Amount">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date Transmitted to LBP/AOC</label>
+                                        <input type="text" class="form-control" name="dateTransmitted" placeholder="Date Transmitted to LBP/AOC">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date of MOV</label>
+                                        <input type="text" class="form-control" name="dateofMov" placeholder="Date Transmitted to LBP/AOC">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date NVLA Served to LO</label>
+                                        <input type="text" class="form-control" name="dateofMov" placeholder="Date NVLA Served to LO">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date of FI</label>
+                                        <input type="text" class="form-control" name="dateofFI" placeholder="Date NVLA Served to LO">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date of CF Receipt</label>
+                                        <input type="text" class="form-control" name="dateofCF" placeholder="Date NVLA Served to LO">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Transmittal Status <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="transmittalStatus">
+                                            <option value="">Select option</option>
+                                            <option value="Accepted">Accepted</option>
+                                            <option value="Returned">Returned</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 mb-2">
+                                        <label class="form-label"><span class="text-danger">If returned, state reasons</span></label>
+                                        <input type="text" class="form-control" name="dateofCF">
+                                    </div>
+                                  </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--Edit Modal -->
+                    <div class="modal fade" id="editmodalvaluation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Valuation</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot No. <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="lotNumber_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">AOC No.</label>
+                                        <input type="text" class="form-control" name="aocNo" placeholder="AOC No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">LBP Claim No.</label>
+                                        <input type="text" class="form-control" name="claimNo" placeholder="LBP Claim No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Amount</label>
+                                        <input type="text" class="form-control" name="amount" placeholder="Amount">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date Transmitted to LBP/AOC</label>
+                                        <input type="text" class="form-control" name="dateTransmitted" placeholder="Date Transmitted to LBP/AOC">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date of MOV</label>
+                                        <input type="text" class="form-control" name="dateofMov" placeholder="Date Transmitted to LBP/AOC">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date NVLA Served to LO</label>
+                                        <input type="text" class="form-control" name="dateofMov" placeholder="Date NVLA Served to LO">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date of FI</label>
+                                        <input type="text" class="form-control" name="dateofFI" placeholder="Date NVLA Served to LO">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Date of CF Receipt</label>
+                                        <input type="text" class="form-control" name="dateofCF" placeholder="Date NVLA Served to LO">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Transmittal Status <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="transmittalStatus">
+                                            <option value="">Select option</option>
+                                            <option value="Accepted">Accepted</option>
+                                            <option value="Returned">Returned</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 mb-2">
+                                        <label class="form-label"><span class="text-danger">If returned, state reasons</span></label>
+                                        <input type="text" class="form-control" name="dateofCF">
+                                    </div>
+                                  </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- delete modal lot -->
+                    <div class="modal fade" id="deletemodalvaluation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Delete Valuation</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <label for="" class="form-label">Are you sure you want to delete? </label>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="title-text mt-4">Award Land</h2>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card p-5 rounded-4">
+                    <button class="btn btn-success btn-sm mb-5" style="width: 160px;" data-bs-toggle="modal" data-bs-target="#addmodalawardland"><i class="fa-solid fa-add"></i> Add Award Land</button>
+                    <table id="awardland" class="table table-responsive table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Lot No.</th>
+                                <th>FB/Collective Name</th>
+                                <th>CLOA Serial #</th>
+                                <th>Award Type</th>
+                                <th>Generation Date</th>
+                                <th>CLOA EPEB #</th>
+                                <th>CLOA EPEB Date</th>
+                                <th>Registered Date</th>
+                                <th>Award Title #</th>
+                                <th>Distribution Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Name">Tiger Nixon</td>
+                                <td data-label="Position">System Architect</td>
+                                <td data-label="Office">Edinburgh</td>
+                                <td data-label="Age">61</td>
+                                <td data-label="Start Date">2011-04-25</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Salary">$320,800</td>
+                                <td data-label="Action">
+                                    <a href="" class="btn btn-primary btn-sm mb-1" data-bs-toggle="modal" data-bs-target="#editmodalawardland"><i class="fa-solid fa-edit"></i> Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deletemodalawardland"><i class="fa-solid fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--Add Modal -->
+                    <div class="modal fade" id="addmodalawardland" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Award Land</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot No. <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="lotNumber_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">FB/Collective Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="fbOrcname" placeholder="FB/Collective Name">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">CLOA SERIAL NO. <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="serialNo" placeholder="CLOA SERIAL NO.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Award Type <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="awardType_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Generation Date</label>
+                                        <input type="date" class="form-control" name="genDate" placeholder="Generation Date">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">CLOA EPEB No.</label>
+                                        <input type="text" class="form-control" name="epebNo" placeholder="CLOA EPEB No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">CLOA EPEB Date</label>
+                                        <input type="date" class="form-control" name="epebDate" placeholder="CLOA EPEB Date">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Registered Date</label>
+                                        <input type="date" class="form-control" name="registerDate" placeholder="Registered Date">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Award Title No.</label>
+                                        <input type="text" class="form-control" name="awardtitleNo" placeholder="Award Title No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Distribution Date</label>
+                                        <input type="date" class="form-control" name="distributeDate" placeholder="Distribution Date">
+                                    </div>
+                                  </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--Edit Modal -->
+                    <div class="modal fade" id="editmodalawardland" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Award Land</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Lot No. <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="lotNumber_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">FB/Collective Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="fbOrcname" placeholder="FB/Collective Name">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">CLOA SERIAL NO. <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="serialNo" placeholder="CLOA SERIAL NO.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Award Type <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="awardType_id">
+                                            <option value="">Select option</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Generation Date</label>
+                                        <input type="date" class="form-control" name="genDate" placeholder="Generation Date">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">CLOA EPEB No.</label>
+                                        <input type="text" class="form-control" name="epebNo" placeholder="CLOA EPEB No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">CLOA EPEB Date</label>
+                                        <input type="date" class="form-control" name="epebDate" placeholder="CLOA EPEB Date">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Registered Date</label>
+                                        <input type="date" class="form-control" name="registerDate" placeholder="Registered Date">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Award Title No.</label>
+                                        <input type="text" class="form-control" name="awardtitleNo" placeholder="Award Title No.">
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Distribution Date</label>
+                                        <input type="date" class="form-control" name="distributeDate" placeholder="Distribution Date">
+                                    </div>
+                                  </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- delete modal lot -->
+                    <div class="modal fade" id="deletemodalawardland" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Delete Award Land</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <label for="" class="form-label">Are you sure you want to delete? </label>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="title-text mt-4">Forms</h2>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card p-5 rounded-4">
+                    <table id="form" class="table table-responsive table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Form No.</th>
+                                <th>Form Name</th>
+                                <th>Date and Time Generated</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Name">Tiger Nixon</td>
+                                <td data-label="Position">System Architect</td>
+                                <td data-label="Office">Edinburgh</td>
+                                <td data-label="Action">
+                                    <a href="" class="btn btn-primary btn-sm"><i class="fa-solid fa-edit"></i> Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script>
+        // Initialize Select2
+        $(document).ready(function() {
+          $('#select-box').select2();
+        });
+    </script>
+</body>
+</html>
